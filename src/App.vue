@@ -1,16 +1,6 @@
 <template>
   <div id="app">
-    <header class="header">
-      <div class="container">
-        <nav class="nav nav--navbar">
-          <a href="" class="link link--navbar">characters</a>
-          <a href="" class="link link--navbar">seasons</a>
-          <a href="" class="link link--navbar">episodes</a>
-          <a href="" class="link link--navbar">quote</a>
-          <a href="" class="link link--navbar">deaths</a>
-        </nav>
-      </div>
-    </header>
+    <page-header></page-header>
     <div class="row">
       <div class="col-md-3">
         <section class="sidebar">
@@ -225,3 +215,17 @@
     </div>
   </div>
 </template>
+
+<script>
+import Header from '@/components/blocks/Header'
+
+export default {
+  name: 'app',
+  components: {
+    'page-header': Header
+  },
+  data() {
+    return {}
+  }
+}
+</script>
