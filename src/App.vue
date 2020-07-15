@@ -1,32 +1,227 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <header class="header">
+      <div class="container">
+        <nav class="nav nav--navbar">
+          <a href="" class="link link--navbar">characters</a>
+          <a href="" class="link link--navbar">seasons</a>
+          <a href="" class="link link--navbar">episodes</a>
+          <a href="" class="link link--navbar">quote</a>
+          <a href="" class="link link--navbar">deaths</a>
+        </nav>
+      </div>
+    </header>
+    <div class="row">
+      <div class="col-md-3">
+        <section class="sidebar">
+          <nav class="nav nav--vertical">
+            <button class="btn btn--sidebar">filter by name</button>
+            <button class="btn btn--sidebar">filter by age</button>
+            <button class="btn btn--sidebar">filter by seasons</button>
+            <button class="btn btn--sidebar">filter by seasons</button>
+            <button class="btn btn--sidebar">filter by seasons</button>
+            <button class="btn btn--sidebar">filter by seasons</button>
+          </nav>
+        </section>
+      </div>
+      <div class="col-md-9">
+        <section class="gallery">
+          <div class="row">
+            <div class="col-md-3">
+              <!-- gallery__card -->
+              <div class="gallery__card">
+                <div class="gallery__img-wrap">
+                  <img
+                    src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg"
+                    alt=""
+                    class="gallery__img"
+                  />
+                </div>
+                <div class="gallery__bottom">
+                  <h3 class="gallery__nick">
+                    nick "Heisenberg"
+                  </h3>
+                  <p class="gallery__name">
+                    name "Walter White"
+                  </p>
+                  <p class="gallery__date">
+                    birthday: "09-07-1958
+                  </p>
+                </div>
+              </div>
+              <!-- gallery__card END -->
+            </div>
+            <div class="col-md-3">
+              <!-- gallery__card -->
+              <div class="gallery__card">
+                <div class="gallery__img-wrap">
+                  <img
+                    src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg"
+                    alt=""
+                    class="gallery__img"
+                  />
+                </div>
+                <div class="gallery__bottom">
+                  <h3 class="gallery__nick">
+                    nick "Heisenberg"
+                  </h3>
+                  <p class="gallery__name">
+                    name "Walter White"
+                  </p>
+                  <p class="gallery__date">
+                    birthday: "09-07-1958
+                  </p>
+                </div>
+              </div>
+              <!-- gallery__card END -->
+            </div>
+            <div class="col-md-3">
+              <!-- gallery__card -->
+              <div class="gallery__card">
+                <div class="gallery__img-wrap">
+                  <img
+                    src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg"
+                    alt=""
+                    class="gallery__img"
+                  />
+                </div>
+                <div class="gallery__bottom">
+                  <h3 class="gallery__nick">
+                    nick "Heisenberg"
+                  </h3>
+                  <p class="gallery__name">
+                    name "Walter White"
+                  </p>
+                  <p class="gallery__date">
+                    birthday: "09-07-1958
+                  </p>
+                </div>
+              </div>
+              <!-- gallery__card END -->
+            </div>
+            <div class="col-md-3">
+              <!-- gallery__card -->
+              <div class="gallery__card">
+                <div class="gallery__img-wrap">
+                  <img
+                    src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg"
+                    alt=""
+                    class="gallery__img"
+                  />
+                </div>
+                <div class="gallery__bottom">
+                  <h3 class="gallery__nick">
+                    nick "Heisenberg"
+                  </h3>
+                  <p class="gallery__name">
+                    name "Walter White"
+                  </p>
+                  <p class="gallery__date">
+                    birthday: "09-07-1958
+                  </p>
+                </div>
+              </div>
+              <!-- gallery__card END -->
+            </div>
+            <div class="col-md-3">
+              <!-- gallery__card -->
+              <div class="gallery__card">
+                <div class="gallery__img-wrap">
+                  <img
+                    src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg"
+                    alt=""
+                    class="gallery__img"
+                  />
+                </div>
+                <div class="gallery__bottom">
+                  <h3 class="gallery__nick">
+                    nick "Heisenberg"
+                  </h3>
+                  <p class="gallery__name">
+                    name "Walter White"
+                  </p>
+                  <p class="gallery__date">
+                    birthday: "09-07-1958
+                  </p>
+                </div>
+              </div>
+              <!-- gallery__card END -->
+            </div>
+            <div class="col-md-3">
+              <!-- gallery__card -->
+              <div class="gallery__card">
+                <div class="gallery__img-wrap">
+                  <img
+                    src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg"
+                    alt=""
+                    class="gallery__img"
+                  />
+                </div>
+                <div class="gallery__bottom">
+                  <h3 class="gallery__nick">
+                    nick "Heisenberg"
+                  </h3>
+                  <p class="gallery__name">
+                    name "Walter White"
+                  </p>
+                  <p class="gallery__date">
+                    birthday: "09-07-1958
+                  </p>
+                </div>
+              </div>
+              <!-- gallery__card END -->
+            </div>
+            <div class="col-md-3">
+              <!-- gallery__card -->
+              <div class="gallery__card">
+                <div class="gallery__img-wrap">
+                  <img
+                    src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg"
+                    alt=""
+                    class="gallery__img"
+                  />
+                </div>
+                <div class="gallery__bottom">
+                  <h3 class="gallery__nick">
+                    nick "Heisenberg"
+                  </h3>
+                  <p class="gallery__name">
+                    name "Walter White"
+                  </p>
+                  <p class="gallery__date">
+                    birthday: "09-07-1958
+                  </p>
+                </div>
+              </div>
+              <!-- gallery__card END -->
+            </div>
+            <div class="col-md-3">
+              <!-- gallery__card -->
+              <div class="gallery__card">
+                <div class="gallery__img-wrap">
+                  <img
+                    src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg"
+                    alt=""
+                    class="gallery__img"
+                  />
+                </div>
+                <div class="gallery__bottom">
+                  <h3 class="gallery__nick">
+                    nick "Heisenberg"
+                  </h3>
+                  <p class="gallery__name">
+                    name "Walter White"
+                  </p>
+                  <p class="gallery__date">
+                    birthday: "09-07-1958
+                  </p>
+                </div>
+              </div>
+              <!-- gallery__card END -->
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
-    <router-view />
   </div>
 </template>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
