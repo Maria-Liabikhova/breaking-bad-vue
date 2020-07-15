@@ -3,16 +3,7 @@
     <page-header></page-header>
     <div class="row">
       <div class="col-md-3">
-        <section class="sidebar">
-          <nav class="nav nav--vertical">
-            <button class="btn btn--sidebar">filter by name</button>
-            <button class="btn btn--sidebar">filter by age</button>
-            <button class="btn btn--sidebar">filter by seasons</button>
-            <button class="btn btn--sidebar">filter by seasons</button>
-            <button class="btn btn--sidebar">filter by seasons</button>
-            <button class="btn btn--sidebar">filter by seasons</button>
-          </nav>
-        </section>
+        <sidebar></sidebar>
       </div>
       <div class="col-md-9">
         <section class="gallery">
@@ -218,11 +209,13 @@
 
 <script>
 import Header from '@/components/blocks/Header'
+import Sidebar from '@/components/blocks/Sidebar'
 
 export default {
   name: 'app',
   components: {
-    'page-header': Header
+    'page-header': Header,
+    sidebar: Sidebar,
   },
   data() {
     return {}
