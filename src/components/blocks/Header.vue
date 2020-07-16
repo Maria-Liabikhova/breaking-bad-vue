@@ -2,11 +2,11 @@
   <header class="header">
     <div class="container">
       <nav class="nav nav--navbar">
-        <a href="" class="link link--navbar">characters</a>
-        <a href="" class="link link--navbar">seasons</a>
-        <a href="" class="link link--navbar">episodes</a>
-        <a href="" class="link link--navbar">quote</a>
-        <a href="" class="link link--navbar">deaths</a>
+        <router-link to="/" :class="{ active: $route.path === '/'}" class="link link--navbar">characters</router-link>
+        <router-link to="/seasons" :class="{ active: $route.path === '/seasons'}" class="link link--navbar">seasons</router-link>
+        <router-link to="/" class="link link--navbar">episodes</router-link>
+        <router-link to="/" class=" link link--navbar">quotes</router-link>
+        <router-link to="/" class="link link--navbar">deaths</router-link>
       </nav>
     </div>
   </header>
