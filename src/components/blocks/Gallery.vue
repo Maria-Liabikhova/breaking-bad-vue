@@ -8,9 +8,9 @@
             <img :src="character.imgSrc" alt="" class="gallery__img" />
           </div>
           <div class="gallery__bottom">
-            <h3 class="gallery__nick"> nick "{{character.nick}}"</h3>
-            <p class="gallery__name">name "{{ character.name }}"</p>
-            <p class="gallery__date">birthday: "{{character.birthday}}"</p>
+            <h3 class="gallery__nick"> nick: {{character.nickname}}</h3>
+            <p class="gallery__name">name: {{ character.name }}</p>
+            <p class="gallery__date">birthday: {{character.birthday}}</p>
           </div>
         </div>
         <!-- gallery__card END -->
