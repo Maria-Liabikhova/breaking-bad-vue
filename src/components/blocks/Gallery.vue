@@ -10,13 +10,13 @@
           </div>
 
           <div  v-if="$route.path ==='/'" class="gallery__bottom">
-            <h3 class="gallery__nick"> nick: {{quality.nick}}</h3>
+            <h3 class="gallery__nick"> nick: {{quality.nickname}}</h3>
             <p class="gallery__name">name: {{ quality.name }}</p>
             <p class="gallery__date">birthday: {{quality.birthday}}</p>
           </div>
 
           <div v-else class="gallery__bottom gallery__bottom--season">
-            <h3 class="gallery__nick"> air_date: {{quality.air_date}}</h3>
+            <h3 class="gallery__nick"> air-date: {{quality.air_date}}</h3>
             <p class="gallery__name">characters: {{quality.characters }}</p>
             <p class="gallery__date">episode: {{quality.episode}}</p>
           </div>

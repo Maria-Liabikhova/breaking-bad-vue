@@ -7,6 +7,7 @@
       </div>
       <div class="col-md-9">
         <h1 class="text text--h1">Characters</h1>
+        <button class="btn btn--sidebar" @click="filterByAlive()">Filter by alive</button>
         <gallery :characters="characters"></gallery>
       </div>
     </div>
@@ -313,6 +314,13 @@ export default {
           better_call_saul_appearance: []
         }
       ]
+    }
+  },
+
+  methods: {
+    filterByAlive() {
+      this.characters = this.characters.filter(el => el.status === 'Alive')
+      return this.characters
     }
   }
 }
