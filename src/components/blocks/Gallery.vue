@@ -9,8 +9,8 @@
             <img :src="quality.imgSrc" alt="" class="gallery__img" />
           </div>
 
-          <div  v-if="$route.pass ==='/'" class="gallery__bottom">
-            <h3 class="gallery__nick"> nick: {{quality.nickname}}</h3>
+          <div  v-if="$route.path ==='/'" class="gallery__bottom">
+            <h3 class="gallery__nick"> nick: {{quality.nick}}</h3>
             <p class="gallery__name">name: {{ quality.name }}</p>
             <p class="gallery__date">birthday: {{quality.birthday}}</p>
           </div>
@@ -20,7 +20,7 @@
             <p class="gallery__name">characters: {{quality.characters }}</p>
             <p class="gallery__date">episode: {{quality.episode}}</p>
           </div>
-
+          
         </div>
         <!-- gallery__card END -->
       </div>
