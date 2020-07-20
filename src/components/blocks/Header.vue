@@ -1,5 +1,5 @@
 <template>
-  <header class="header" :class="{ 'header__green-bottom' : $route.path === '/episodes'}">
+  <header class="header" :class="{ 'header__yellow-bottom' : $route.path === '/episodes' || $route.path ===  '/quotes'|| $route.path === '/deaths'}">
   <!-- <header class="header" :class="{ 'header__green-bottom' : $route.path === '/episodes'}" :class="{ 'header__green-bottom' : $route.path === '/quotes'}" :class="{ 'header__green-bottom' : $route.path === '/deaths'}"> -->
     <div class="container">
       <nav class="nav nav--navbar">
