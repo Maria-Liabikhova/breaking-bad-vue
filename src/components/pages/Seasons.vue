@@ -7,6 +7,7 @@
       </div>
       <div class="col-md-9">
         <h1 class="text text--h1">Seasons</h1>
+        <bottom class="btn btn--sidebar" @click="filterById()">Seasons id from 8 </bottom>
         <gallery :characters="seasons"></gallery>
       </div>
     </div>
@@ -316,6 +317,13 @@ export default {
             'https://m.media-amazon.com/images/M/MV5BMTk1MTI3NjY1Ml5BMl5BanBnXkFtZTgwMTk2MDU5NTM@._V1_UX224_CR0,0,224,126_AL_.jpg'
         }
       ]
+    }
+  },
+
+  methods: {
+    filterById() {
+      this.seasons = this.seasons.filter(el => el.episode_id > 7)
+      return this.seasons
     }
   }
 }
