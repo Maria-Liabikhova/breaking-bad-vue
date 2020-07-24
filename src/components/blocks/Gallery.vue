@@ -1,13 +1,12 @@
 <template>
   <section class="gallery">
     <div class="row">
-      <!-- Критерий "character" поменин на "quality", чтобы избегать путаницы -->
-      <div v-for="quality in characters" :key="quality.id" class= "col-md-3">
+      <div v-for="quality in characters" :key="quality.id" class="col-md-3">
         <!-- gallery__card -->
         <div class="gallery__card" :class="{'gallery__card--season': $route.path ==='/seasons'}">
         
           <div class="gallery__img-wrap" :class="{'gallery__img-wrap--season' : $route.path === '/seasons'}">
-            <img :src="quality.imgSrc" alt="" class="gallery__img" />
+            <img :src="quality.imgSrc" alt="" class="gallery__img" >
           </div>
 
           <div  v-if="$route.path ==='/'" class="gallery__bottom">

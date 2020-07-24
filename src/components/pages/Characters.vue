@@ -7,8 +7,11 @@
       </div>
       <div class="col-md-9">
         <h1 class="text text--h1">Characters</h1>
-        <button class="btn btn--sidebar" @click="filterByAlive()">Filter by alive</button>
-        <gallery :characters="characters"></gallery>
+        <button class="btn btn--sidebar" @click="filter = 'Alive'">Filter by alive</button>
+        <button class="btn btn--sidebar" @click="filter = 'Deceased'">Filter by dead</button>
+        <button class="btn btn--sidebar" @click="filter = 'better_call_saul_appearance'">Filter by appearance in "Better call saul"</button>
+        <button class="btn btn--sidebar" @click="filter ='all'">show all</button>
+        <gallery :characters="filteredCharacters"></gallery>
       </div>
     </div>
   </section>
@@ -28,6 +31,7 @@ export default {
   },
   data() {
     return {
+      filter: 'all',
       characters: [
         {
           char_id: 1,
@@ -317,10 +321,25 @@ export default {
     }
   },
 
+
+  computed: {
+    filteredCharacters() {
+      if (this.filter === 'all') {
+        return this.characters
+      } 
+      // else if(this.better_call_saul_appearance.length > 0  ) {
+      //   return this.filterByStatus(this.characters, this.filter)
+      // }
+      else { 
+        return this.filterByStatus(this.characters, this.filter)
+      }
+    }
+  },
+
   methods: {
-    filterByAlive() {
-      this.characters = this.characters.filter(el => el.status === 'Alive')
-      return this.characters
+    filterByStatus(list, filter) {
+      const filteredList = list.filter(el => el.status === filter)
+      return filteredList
     }
   }
 }
