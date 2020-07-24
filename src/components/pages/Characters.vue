@@ -321,15 +321,14 @@ export default {
     }
   },
 
-
   computed: {
     filteredCharacters() {
       if (this.filter === 'all') {
         return this.characters
       } 
-      // else if(this.better_call_saul_appearance.length > 0  ) {
-      //   return this.filterByStatus(this.characters, this.filter)
-      // }
+      else if(this.filter > 0 ) {
+        return this.filterByBetter_call_saul_appearance(this.characters, this.filter)
+      }
       else { 
         return this.filterByStatus(this.characters, this.filter)
       }
@@ -340,6 +339,12 @@ export default {
     filterByStatus(list, filter) {
       const filteredList = list.filter(el => el.status === filter)
       return filteredList
+    },
+    
+    filterByBetter_call_saul_appearance(saul, filter) {
+      const filteredSaul = saul.filter(el => el.better_call_saul_appearance === filter)
+      return filteredSaul
+
     }
   }
 }

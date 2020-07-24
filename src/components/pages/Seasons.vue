@@ -7,7 +7,9 @@
       </div>
       <div class="col-md-9">
         <h1 class="text text--h1">Seasons</h1>
-        <bottom class="btn btn--sidebar" @click="filterById()">Seasons id from 8 </bottom>
+        <bottom class="btn btn--sidebar" @click="filter = 'episode_id'">Seasons id from 8 </bottom>
+        <bottom class="btn btn--sidebar" @click="filter = 'characters'">Seasons with Krazy-8</bottom>
+        <bottom class="btn btn--sidebar" @click="filter = 'air_date'">Seasons after 03-09-2008</bottom>
         <gallery :characters="seasons"></gallery>
       </div>
     </div>
@@ -319,6 +321,10 @@ export default {
       ]
     }
   },
+
+//Добавьте фильтры для страницы seasons. Фильтры (все серии где снялся 'Krazy-8', все 
+// серии вышедшие после 03-09-2008, все серии с нечетными id). Подсказка если внутри computed становиться много кода 
+// (логики) то часть функционала можно переносить в функции.
 
   methods: {
     filterById() {
