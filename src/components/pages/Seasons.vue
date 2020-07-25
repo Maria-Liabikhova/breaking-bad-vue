@@ -7,10 +7,22 @@
       </div>
       <div class="col-md-9">
         <h1 class="text text--h1">Seasons</h1>
-        <bottom class="btn btn--sidebar" @click="filter = 'episode_id'">Seasons id from 8 </bottom>
-        <bottom class="btn btn--sidebar" @click="filter = 'characters'">Seasons with Krazy-8</bottom>
-        <bottom class="btn btn--sidebar" @click="filter = 'air_date'">Seasons after 03-09-2008</bottom>
-        <gallery :characters="seasons"></gallery>
+        <bottom class="btn btn--sidebar" @click="filter = 'episode_id'"
+          >Seasons id from 8
+        </bottom>
+        <bottom class="btn btn--sidebar" @click="filter = 'characters'"
+          >Seasons with Krazy-8</bottom
+        >
+        <bottom class="btn btn--sidebar" @click="filter = 'air_date'"
+          >Seasons after 03-09-2008</bottom
+        >
+        <bottom class="btn btn--sidebar" @click="filter = 'episode_id'"
+          >odd Seasons
+        </bottom>
+        <bottom class="btn btn--sidebar" @click="filter = 'all'"
+          >show all
+        </bottom>
+        <gallery :characters="filteredSeasons"></gallery>
       </div>
     </div>
   </section>
@@ -29,6 +41,7 @@ export default {
   },
   data() {
     return {
+      filter: 'all',
       seasons: [
         {
           episode_id: 1,
@@ -322,14 +335,25 @@ export default {
     }
   },
 
-//Добавьте фильтры для страницы seasons. Фильтры (все серии где снялся 'Krazy-8', все 
-// серии вышедшие после 03-09-2008, все серии с нечетными id). Подсказка если внутри computed становиться много кода 
-// (логики) то часть функционала можно переносить в функции.
+  computed: {
+    filteredSeasons() {
+      if (this.filter === 'all') return this.seasons
+      else if (this.filter === 'characters')
+        return this.filterByCharacters(this.characters, this.filter)
+      // else if (this.filter === "air_date")
+      //   return this.filterByDate(this.characters, this.filter)
+      else return this.filterByDate(this.characters, this.filter)
+    }
+  },
 
   methods: {
-    filterById() {
-      this.seasons = this.seasons.filter(el => el.episode_id > 7)
-      return this.seasons
+    filterByCharacters(list, filter) {
+      const filteredList = list.filter(el => el.characters.includes('Krazy-8') = true)
+      return filteredList
+    },
+    filterByCharacters(list, filter) {
+      const filteredList = list.filter(el => el.air_date > Date(03-09-2008))
+      return filteredList
     }
   }
 }
