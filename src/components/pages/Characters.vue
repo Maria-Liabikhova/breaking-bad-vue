@@ -323,11 +323,13 @@ export default {
 
   computed: {
     filteredCharacters() {
+      console.log('hello')
       if (this.filter === 'all') {
         return this.characters
       } 
-      else if(this.filter > 0 ) {
-        return this.filterByBetter_call_saul_appearance(this.characters, this.filter)
+      else if(this.filter === "better_call_saul_appearance" ) {
+        return this.filterBySaul(this.characters)
+       
       }
       else { 
         return this.filterByStatus(this.characters, this.filter)
@@ -341,8 +343,8 @@ export default {
       return filteredList
     },
     
-    filterByBetter_call_saul_appearance(saul, filter) {
-      const filteredSaul = saul.filter(el => el.better_call_saul_appearance === filter)
+    filterBySaul(list, filter) {
+      const filteredSaul = list.filter(el => el.better_call_saul_appearance.length > 0)
       return filteredSaul
 
     }
