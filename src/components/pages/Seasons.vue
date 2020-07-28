@@ -7,21 +7,21 @@
       </div>
       <div class="col-md-9">
         <h1 class="text text--h1">Seasons</h1>
-        <bottom class="btn btn--sidebar" @click="filter = 'episode_id'"
-          >Seasons id from 8
-        </bottom>
-        <bottom class="btn btn--sidebar" @click="filter = 'characters'"
-          >Seasons with Krazy-8</bottom
-        >
-        <bottom class="btn btn--sidebar" @click="filter = 'air_date'"
-          >Seasons after 03-09-2008</bottom
-        >
-        <bottom class="btn btn--sidebar" @click="filter = 'episode_id'"
-          >odd Seasons
-        </bottom>
-        <bottom class="btn btn--sidebar" @click="filter = 'all'"
-          >show all
-        </bottom>
+        <!-- <button class="btn btn--sidebar" @click="filter = 'episode_id'">
+          Episode id from 8
+        </button> -->
+        <button class="btn btn--sidebar" @click="filter = 'characters'">
+          Episode with Krazy-8
+        </button>
+        <button class="btn btn--sidebar" @click="filter = 'air_date'">
+          Episode after 03-09-2008
+        </button>
+        <button class="btn btn--sidebar" @click="filter = 'episode_id'">
+          Odd episode id
+        </button>
+        <button class="btn btn--sidebar" @click="filter = 'all'">
+          show all
+        </button>
         <gallery :characters="filteredSeasons"></gallery>
       </div>
     </div>
@@ -339,20 +339,26 @@ export default {
     filteredSeasons() {
       if (this.filter === 'all') return this.seasons
       else if (this.filter === 'characters')
-        return this.filterByCharacters(this.characters, this.filter)
-      // else if (this.filter === "air_date")
-      //   return this.filterByDate(this.characters, this.filter)
-      else return this.filterByDate(this.characters, this.filter)
+        return this.filterByCharacters(this.seasons)
+      else if (this.filter === 'air_date')
+        return this.filterByDate(this.seasons)
+      else return this.filterByOdd(this.seasons, this.filter)
     }
   },
 
   methods: {
     filterByCharacters(list, filter) {
-      const filteredList = list.filter(el => el.characters.includes('Krazy-8') = true)
+      const filteredList = list.filter(
+        el => el.characters.includes('Krazy-8') == true
+      )
       return filteredList
     },
-    filterByCharacters(list, filter) {
-      const filteredList = list.filter(el => el.air_date > Date(03-09-2008))
+    filterByDate(list, filter) {
+      const filteredList = list.filter(el => el.air_date > '03-09-2008')
+      return filteredList
+    },
+    filterByOdd(list, filter) {
+      const filteredList = list.filter(el => el.episode_id % 2 !== 0)
       return filteredList
     }
   }

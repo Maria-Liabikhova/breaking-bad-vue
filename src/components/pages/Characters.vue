@@ -7,10 +7,21 @@
       </div>
       <div class="col-md-9">
         <h1 class="text text--h1">Characters</h1>
-        <button class="btn btn--sidebar" @click="filter = 'Alive'">Filter by alive</button>
-        <button class="btn btn--sidebar" @click="filter = 'Deceased'">Filter by dead</button>
-        <button class="btn btn--sidebar" @click="filter = 'better_call_saul_appearance'">Filter by appearance in "Better call saul"</button>
-        <button class="btn btn--sidebar" @click="filter ='all'">show all</button>
+        <button class="btn btn--sidebar" @click="filter = 'Alive'">
+          Filter by alive
+        </button>
+        <button class="btn btn--sidebar" @click="filter = 'Deceased'">
+          Filter by dead
+        </button>
+        <button
+          class="btn btn--sidebar"
+          @click="filter = 'better_call_saul_appearance'"
+        >
+          Filter by appearance in "Better call saul"
+        </button>
+        <button class="btn btn--sidebar" @click="filter = 'all'">
+          show all
+        </button>
         <gallery :characters="filteredCharacters"></gallery>
       </div>
     </div>
@@ -52,7 +63,8 @@ export default {
           name: 'Jesse Pinkman',
           birthday: '09-24-1984',
           occupation: ['Meth Dealer'],
-          imgSrc:'https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Jesse_Pinkman2.jpg/220px-Jesse_Pinkman2.jpg',
+          imgSrc:
+            'https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Jesse_Pinkman2.jpg/220px-Jesse_Pinkman2.jpg',
           status: 'Alive',
           nickname: "Cap n' Cook",
           appearance: [1, 2, 3, 4, 5],
@@ -70,7 +82,8 @@ export default {
             'Car Wash Manager',
             'Taxi Dispatcher'
           ],
-          imgSrc:'https://s-i.huffpost.com/gen/1317262/images/o-ANNA-GUNN-facebook.jpg',
+          imgSrc:
+            'https://s-i.huffpost.com/gen/1317262/images/o-ANNA-GUNN-facebook.jpg',
           status: 'Alive',
           nickname: 'Sky',
           appearance: [1, 2, 3, 4, 5],
@@ -83,7 +96,8 @@ export default {
           name: 'Walter White Jr.',
           birthday: '07-08-1993',
           occupation: ['Teenager'],
-          imgSrc:  'https://media1.popsugar-assets.com/files/thumbor/WeLUSvbAMS_GL4iELYAUzu7Bpv0/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2018/01/12/910/n/1922283/fb758e62b5daf3c9_TCDBRBA_EC011/i/RJ-Mitte-Walter-White-Jr.jpg',
+          imgSrc:
+            'https://media1.popsugar-assets.com/files/thumbor/WeLUSvbAMS_GL4iELYAUzu7Bpv0/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2018/01/12/910/n/1922283/fb758e62b5daf3c9_TCDBRBA_EC011/i/RJ-Mitte-Walter-White-Jr.jpg',
           status: 'Alive',
           nickname: 'Flynn',
           appearance: [1, 2, 3, 4, 5],
@@ -96,7 +110,8 @@ export default {
           name: 'Henry Schrader',
           birthday: 'Unknown',
           occupation: ['DEA Agent'],
-          imgSrc:'https://upload.wikimedia.org/wikipedia/en/thumb/c/c1/Hank_Schrader2.jpg/220px-Hank_Schrader2.jpg',
+          imgSrc:
+            'https://upload.wikimedia.org/wikipedia/en/thumb/c/c1/Hank_Schrader2.jpg/220px-Hank_Schrader2.jpg',
           status: 'Deceased',
           nickname: 'Hank',
           appearance: [1, 2, 3, 4, 5],
@@ -309,7 +324,8 @@ export default {
           name: 'Steven Gomez',
           birthday: 'Unknown',
           occupation: ['DEA Agent'],
-          imgSrc: 'https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_steven-gomez-lg.jpg',
+          imgSrc:
+            'https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_steven-gomez-lg.jpg',
           status: 'Deceased',
           nickname: 'Gomie',
           appearance: [1, 2, 3, 4, 5],
@@ -337,7 +353,9 @@ export default {
       return filteredList
     },
     filterBySaul(list, filter) {
-      const filteredList = list.filter(el => el.better_call_saul_appearance.length > 0)
+      const filteredList = list.filter(
+        el => el.better_call_saul_appearance.length > 0
+      )
       return filteredList
     }
   }
