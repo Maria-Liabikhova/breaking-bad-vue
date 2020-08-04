@@ -339,22 +339,26 @@ export default {
     filteredSeasons() {
       if (this.filter === 'all') return this.seasons
       else if (this.filter === 'characters')
-        return this.filterByCharacters(this.seasons)
+        return this.filterByKrazy8(this.seasons)
       else if (this.filter === 'air_date')
         return this.filterByDate(this.seasons)
-      else return this.filterByOdd(this.seasons, this.filter)
+      else if (this.filter === 'episode_id')
+        return this.filterByOdd(this.seasons)
+      else return this.seasons
     }
   },
 
   methods: {
-    filterByCharacters(list, filter) {
+    filterByKrazy8(list, filter) {
       const filteredList = list.filter(
         el => el.characters.includes('Krazy-8') == true
       )
       return filteredList
     },
     filterByDate(list, filter) {
-      const filteredList = list.filter(el => el.air_date > '03-09-2008')
+      const filteredList = list.filter(
+        el => el.air_date('MM/dd/yyyy') > Date(9 / 3 / 2008)
+      )
       return filteredList
     },
     filterByOdd(list, filter) {
