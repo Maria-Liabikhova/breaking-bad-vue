@@ -338,33 +338,41 @@ export default {
   computed: {
     filteredSeasons() {
       if (this.filter === 'all') return this.seasons
-      else if (this.filter === 'characters')
-        return this.filterByKrazy8(this.seasons)
-      else if (this.filter === 'air_date')
-        return this.filterByDate(this.seasons)
-      else if (this.filter === 'episode_id')
-        return this.filterByOdd(this.seasons)
+      if (this.filter === 'characters') return this.filterByKrazy8(this.seasons)
+      if (this.filter === 'air_date') return this.filterByDate(this.seasons)
+      if (this.filter === 'episode_id') return this.filterByOdd(this.seasons)
       else return this.seasons
     }
   },
 
   methods: {
-    filterByKrazy8(list, filter) {
-      const filteredList = list.filter(
-        el => el.characters.includes('Krazy-8') == true
-      )
-      return filteredList
+    filterByKrazy8(list) {
+      return list.filter(el => el.characters.includes('Krazy-8'))
     },
-    filterByDate(list, filter) {
-      const filteredList = list.filter(
-        el => el.air_date('MM/dd/yyyy') > Date(9 / 3 / 2008)
-      )
-      return filteredList
+    filterByDate(list) {
+      return list.filter(el => new Date(el.air_date) > new Date('03-09-2008'))
     },
-    filterByOdd(list, filter) {
-      const filteredList = list.filter(el => el.episode_id % 2 !== 0)
-      return filteredList
+    filterByOdd(list) {
+      return list.filter(el => el.episode_id % 2 !== 0)
     }
   }
+  // methods: {
+  //   filterByKrazy8(list, filter) {
+  //     const filteredList = list.filter(
+  //       el => el.characters.includes('Krazy-8') == true
+  //     )
+  //     return filteredList
+  //   },
+  //   filterByDate(list, filter) {
+  //     const filteredList = list.filter(
+  //       el => new Date(el.air_date) > new Date('03-09-2008')
+  //     )
+  //     return filteredList
+  //   },
+  //   filterByOdd(list, filter) {
+  //     const filteredList = list.filter(el => el.episode_id % 2 !== 0)
+  //     return filteredList
+  //   }
+  // }
 }
 </script>
