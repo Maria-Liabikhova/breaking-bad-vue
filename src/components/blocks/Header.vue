@@ -18,6 +18,7 @@
           v-for="links in pages"
           :key="links.id"
           :to="links.link"
+          :class="{ active: $route.path === links.link }"
           class="link link--navbar"
           >{{ links.page }}</router-link
         >
@@ -58,8 +59,8 @@ export default {
       pages: [
         { link: '/', page: 'Characters' },
         { link: '/seasons', page: 'seasons' },
-        { link: 'episodes', page: 'episodes' },
-        { link: 'quotes', page: 'quotes' },
+        { link: '/episodes', page: 'episodes' },
+        { link: '/quotes', page: 'quotes' },
         { link: '/deaths', page: 'deaths' }
       ]
     }
