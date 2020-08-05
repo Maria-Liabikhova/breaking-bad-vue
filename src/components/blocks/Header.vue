@@ -8,16 +8,20 @@
         $route.path === '/deaths'
     }"
   >
+    <!-- задание для продвинутых ч1. в header перенесите ссылки в data и перепишите используя в v-for.
+   для активного класса используйте функцию. Подсказка ( :class="blablabla()" ) -->
+
     <!-- <header class="header" :class="{ 'header__green-bottom' : $route.path === '/episodes'}" :class="{ 'header__green-bottom' : $route.path === '/quotes'}" :class="{ 'header__green-bottom' : $route.path === '/deaths'}"> -->
     <div class="container">
       <nav class="nav nav--navbar">
         <router-link
-          to="/"
-          :class="{ active: $route.path === '/' }"
+          v-for="links in pages"
+          :key="links.id"
+          :to="links.link"
           class="link link--navbar"
-          >characters</router-link
+          >{{ links.page }}</router-link
         >
-        <router-link
+        <!-- <router-link
           to="/seasons"
           :class="{ active: $route.path === '/seasons' }"
           class="link link--navbar"
@@ -40,7 +44,7 @@
           :class="{ active: $route.path === '/deaths' }"
           class="link link--navbar"
           >deaths</router-link
-        >
+        > -->
       </nav>
     </div>
   </header>
@@ -50,7 +54,15 @@
 export default {
   name: 'bbheader',
   data() {
-    return {}
+    return {
+      pages: [
+        { link: '/', page: 'Characters' },
+        { link: '/seasons', page: 'seasons' },
+        { link: 'episodes', page: 'episodes' },
+        { link: 'quotes', page: 'quotes' },
+        { link: '/deaths', page: 'deaths' }
+      ]
+    }
   }
 }
 </script>
