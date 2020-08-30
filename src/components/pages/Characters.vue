@@ -339,8 +339,7 @@ export default {
   },
 
   created() {
-    console.log('improvis')
-    this.getCharacters
+    this.getCharacters()
   },
 
   computed: {
@@ -365,8 +364,8 @@ export default {
       return filteredList
     },
     async getCharacters() {
-      console.log('H W')
-      const rsponse = await axios(
+      console.log('Hello World')
+      const response = await axios(
         `https://www.breakingbadapi.com/api/characters`
       )
       this.characters = response.data
