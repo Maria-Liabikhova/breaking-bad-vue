@@ -22,6 +22,7 @@
         <button class="btn btn--sidebar" @click="filter = 'all'">
           show all
         </button>
+        <hr />
         <gallery :characters="filteredSeasons"></gallery>
       </div>
     </div>
