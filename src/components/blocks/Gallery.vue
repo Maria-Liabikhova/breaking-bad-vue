@@ -3,7 +3,8 @@
     <div class="row">
       <div v-for="quality in characters" :key="quality.id" class="col-md-3">
         <!-- gallery__card -->
-        <div
+        <router-link
+          :to="setLink(quality)"
           class="gallery__card"
           :class="{ 'gallery__card--season': $route.path === '/seasons' }"
         >
@@ -26,7 +27,7 @@
             <p class="gallery__date">episode id: {{ quality.episode_id }}</p>
             <p class="gallery__name">season: {{ quality.season }}</p>
           </div>
-        </div>
+        </router-link>
         <!-- gallery__card END -->
       </div>
     </div>
@@ -44,6 +45,14 @@ export default {
   },
   data() {
     return {}
+  },
+
+  methods: {
+    setLink(quality) {
+      return this.$route.path === '/'
+        ? `/character/${quality.char_id}`
+        : `/season/${quality.episode_id}`
+    }
   }
 }
 </script>

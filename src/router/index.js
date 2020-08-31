@@ -4,30 +4,36 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
-    {
+  {
     path: '/',
     name: 'Characters',
     component: () => import('../components/pages/Characters')
   },
-    {
+  {
     path: '/seasons',
     name: 'Seasons',
     component: () => import('../components/pages/Seasons')
   },
-    {
+  {
     path: '/episodes',
     name: 'Episodes',
     component: () => import('../components/pages/Episodes')
   },
-    {
+  {
     path: '/quotes',
     name: 'Quotes',
     component: () => import('../components/pages/Quotes')
   },
-    {
+  {
     path: '/deaths',
     name: 'Deaths',
     component: () => import('../components/pages/Deaths')
+  },
+  {
+    path: '/character/:id',
+    name: 'Character',
+    props: true,
+    component: () => import('../components/pages/Character')
   }
   // {
   //   path: '/about',
